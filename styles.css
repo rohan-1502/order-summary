@@ -1,0 +1,197 @@
+/* Variables */
+/* -------- */
+
+:root {
+  --clr-primary-pale-blue: hsl(225, 100%, 94%);
+  --clr-primary-bright-blue: hsl(245, 75%, 52%);
+  --clr-neutral-pale-blue: hsl(225, 100%, 98%);
+  --clr-neutral-desat-blue: hsl(224, 23%, 55%);
+  --clr-neutral-darkblue: hsl(223, 47%, 23%);
+
+  --ff-sans: 'Red Hat Display', sans-serif;
+
+  --fs-medium: 500;
+  --fs-bold: 700;
+  --fs-ebold: 900;
+}
+
+/* Reset */
+/* ---- */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  /* height: 100%; */
+}
+
+/* Set core body defaults */
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Global classes */
+
+body {
+  background-image: url(images/pattern-background-desktop.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: var(--clr-primary-pale-blue);
+  display: flex;
+  flex-direction: column;
+  font-family: var(--ff-sans);
+  font-size: 16px;
+  justify-content: center;
+  align-items: center;
+  margin: 5rem auto;
+}
+
+main {
+  border-radius: 12px;
+  background-color: white;
+  max-width: 500px;
+}
+/* Image */
+
+.image img{
+  border-radius: 12px 12px 0 0;
+  display: block;
+  width: 100%;
+  height: 30%;
+}
+
+/* ORDER Summary */
+
+.summary {
+  border-radius: 0 0 12px 12px;
+  text-align: center;
+  width: 70%;
+  margin: 1rem auto;
+}
+
+.summary h1 {
+  color: var(--clr-neutral-darkblue);
+  margin: 2rem auto 1rem auto;
+  font-weight: var(--fs-ebold);
+}
+
+.description {
+  color: var(--clr-neutral-desat-blue);
+  margin: 0 auto 1rem auto;
+  width: 70%;
+}
+
+/* PRICES SECTION */
+
+.plan-preview {
+  background-color: var(--clr-neutral-pale-blue);
+  border-radius: 12px;
+  display:flex;
+  justify-content: space-between;
+  margin: 1rem auto;
+  width: 100%;
+  padding: 30px 20px;
+}
+
+.plan-preview .wrap{
+  text-align: left;
+  width: 50%;
+}
+
+.wrap p:first-child {
+  color: var(--clr-neutral-darkblue);
+  font-weight: bolder;
+}
+
+.wrap p:nth-child(2) {
+  color: var(--clr-neutral-desat-blue);
+  font-size: 14px;
+  padding-top: 5px;
+}
+
+.plan-preview img {
+  float: left;
+}
+
+
+.plan-preview a:hover {
+  color:  var(--clr-neutral-darkblue);
+  text-decoration: none;
+}
+
+.btn {
+  border: none;
+  border-radius: 12px;
+  background-color: var(--clr-primary-bright-blue);
+  box-shadow: 0 5px 50px var(--clr-neutral-desat-blue);
+  color: white;
+  display: block;
+  outline: 0;
+  font-weight: var(--fs-bold);
+  margin: 1.5rem auto 2rem auto;
+  padding: 1rem;
+  width: 100%;
+}
+
+.btn:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.payment-button > a {
+  color: var(--clr-neutral-desat-blue);
+  cursor: pointer;
+  font-weight: var(--fs-bold);
+  text-decoration: none;
+}
+
+.payment-button > a:hover {
+  color: var(--clr-neutral-darkblue);
+}
+
+@media  (max-width: 600px){
+
+  body {
+    background-image: url(images/pattern-background-mobile.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: var(--clr-primary-pale-blue);
+  }
+
+  main {
+    margin: 3rem 1.5rem;
+  }
+
+}
